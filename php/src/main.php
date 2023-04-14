@@ -21,7 +21,6 @@
         $calcualte->calculateTotalLiter();
         $calcualte->calculatePercent();
         $calcualte->outputTotalLiter();
-        $calcualte->saveTotalLiter();
     }
 
     if(isset($_POST['delete'])) {
@@ -36,6 +35,8 @@
 
     if(isset($_POST['save'])) {
 
+        $calcualte->calculateTotalLiter();
+        $calcualte->saveTotalLiter();
         $save->saveLid();
         $save->saveMid();
     }
