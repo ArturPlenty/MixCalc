@@ -3,7 +3,7 @@
     $add = new Add();
     $show = new Show();
     $calcualte = new Calculate();
-    $delte = new Delete();
+    $delete = new Delete();
 
     if(isset($_POST['add'])) {
 
@@ -17,25 +17,19 @@
 
     if(isset($_POST['calculate'])) {
 
-        $calcualte->calculateLiter();
+        $calcualte->calculateTotalLiter();
         $calcualte->calculatePercent();
         $calcualte->outputTotalLiter();
+        $calcualte->saveMixture();
     }
 
     if(isset($_POST['delete'])) {
 
-        $delte->selectLiquidToDelete();
+        $delete->selectLiquidToDelete();
     }
 
         if(isset($_GET['id'])) {
 
-            $delte->deleteValues();
+            $delete->deleteValues();
         }
-
-
-    if(isset($_POST['save'])) {
-
-        
-    }
-
 ?>

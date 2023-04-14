@@ -22,7 +22,6 @@
         <input type="submit" name="show" value="Show">
         <input type="submit" name="calculate" value="Calculate">
         <input type="submit" name="delete" value="Delete">
-        <input type="submit" name="save" value="Save">
     </form>
 
     <?php

@@ -3,9 +3,8 @@
     class Calculate extends Connect {
 
         var $total_liter;
-        var $percent;
 
-        public function calculateLiter() {
+        public function calculateTotalLiter() {
 
             $select = mysqli_query($this->dbConnect(), "SELECT liter FROM Liquids");
 
@@ -13,19 +12,29 @@
 
                 $this->total_liter += $row['liter'];
             }
-
         }
 
         public function calculatePercent() {
 
-            $select = mysqli_query($this->dbConnect(), "SELECT liquid, liter FROM Liquids");
+            $select = mysqli_query($this->dbConnect(), "SELECT * FROM Liquids");
 
-            while($row2 = mysqli_fetch_assoc($select)) {
+            while($row2 = mysqli_fetch_array($select)) {
 
-                $this->percent = ($row2['liter'] * 100 / $this->total_liter);
+                $percent = ($row2['liter'] * 100 / $this->total_liter);
 
-                echo $row2['liquid'] . " has " . round($this->percent, 2) . " %  <br>";
+                echo $row2['liquid'] . " has " . round($percent, 2) . " %  <br>";
+
+                $savePercent = "UPDATE Liquids SET percent=round($percent, 2) WHERE lid = $row2[0]";
+
+                mysqli_query($this->dbConnect(), $savePercent);
             }
+        }
+
+        public function saveMixture() {
+
+            $saveTotalLiter = "INSERT INTO Mixtures(total_liter) VALUES ('$this->total_liter')";
+
+            mysqli_query($this->dbConnect(), $saveTotalLiter);
         }
 
         public function outputTotalLiter() {
