@@ -1,32 +1,35 @@
 <?php
 
-    $mix = new Values();
+    $add = new Add();
+    $show = new Show();
+    $calcualte = new Calculate();
+    $delte = new Delete();
 
     if(isset($_POST['add'])) {
 
-        $mix->addLiquid();
+        $add->addLiquid();
     }
 
     if(isset($_POST['show'])) {
 
-        $mix->showLiquids();
+        $show->showLiquids();
     }
 
     if(isset($_POST['calculate'])) {
 
-        $mix->calculateLiter();
-        $mix->calculatePercent();
-        $mix->outputTotalLiter();
+        $calcualte->calculateLiter();
+        $calcualte->calculatePercent();
+        $calcualte->outputTotalLiter();
     }
 
     if(isset($_POST['delete'])) {
 
-        $mix->selectLiquidToDelete();
+        $delte->selectLiquidToDelete();
     }
 
         if(isset($_GET['id'])) {
 
-            $mix->deleteValues();
+            $delte->deleteValues();
         }
 
 
