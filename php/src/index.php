@@ -22,6 +22,7 @@
         <input type="submit" name="show" value="Show">
         <input type="submit" name="calculate" value="Calculate">
         <input type="submit" name="delete" value="Delete">
+        <input type="submit" name="save" value="Save">
     </form>
 
     <?php
@@ -33,6 +34,7 @@
         include_once('show.php');
         include_once('calculate.php');
         include_once('delete.php');
+        include_once('save.php');
 
         //* main.php muss immer als letztes angegeben werden, damit alle anderen Klassen erkannt werden
         include_once('main.php');

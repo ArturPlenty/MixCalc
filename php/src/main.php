@@ -4,6 +4,7 @@
     $show = new Show();
     $calcualte = new Calculate();
     $delete = new Delete();
+    $save = new Save();
 
     if(isset($_POST['add'])) {
 
@@ -20,7 +21,7 @@
         $calcualte->calculateTotalLiter();
         $calcualte->calculatePercent();
         $calcualte->outputTotalLiter();
-        $calcualte->saveMixture();
+        $calcualte->saveTotalLiter();
     }
 
     if(isset($_POST['delete'])) {
@@ -32,4 +33,10 @@
 
             $delete->deleteValues();
         }
+
+    if(isset($_POST['save'])) {
+
+        $save->saveLid();
+        $save->saveMid();
+    }
 ?>

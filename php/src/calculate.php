@@ -30,7 +30,7 @@
             }
         }
 
-        public function saveMixture() {
+        public function saveTotalLiter() {
 
             $saveTotalLiter = "INSERT INTO Mixtures(total_liter) VALUES ('$this->total_liter')";
 
