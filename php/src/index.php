@@ -30,7 +30,10 @@
         error_reporting(E_ALL ^E_WARNING);
 
         include_once('connect.php');
-        include_once('values.php');
+        include_once('add.php');
+        include_once('show.php');
+        include_once('calculate.php');
+        include_once('delete.php');
 
         //* main.php muss immer als letztes angegeben werden, damit alle anderen Klassen erkannt werden
         include_once('main.php');
