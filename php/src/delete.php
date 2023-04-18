@@ -4,6 +4,7 @@
 
         var $id;
 
+        //* Delete option is generated and the ID of the selected liquid gets fetched
         public function selectLiquidToDelete() {
 
             $select = mysqli_query($this->dbConnect(), "SELECT * FROM Liquids");
@@ -14,6 +15,7 @@
             }
         }
 
+        //* After the ID got fetched the selected liquid gets deleted
         public function deleteValues() {
 
             $this->id = $_GET['id'];

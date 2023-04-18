@@ -11,6 +11,7 @@
             $this->liter = $_POST['liter'];
         }
 
+        //* The liquids table is filled with liquid and liter from the textboxes
         public function addLiquid() {
 
             $add = "INSERT INTO Liquids(liquid,liter) VALUES ('$this->liquid', '$this->liter')";

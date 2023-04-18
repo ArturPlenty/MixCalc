@@ -4,6 +4,7 @@
 
         var $total_liter;
 
+        //* The total liter is calculated
         public function calculateTotalLiter() {
 
             $select = mysqli_query($this->dbConnect(), "SELECT liter FROM Liquids");
@@ -14,6 +15,7 @@
             }
         }
 
+        //* The
         public function calculatePercent() {
 
             $select = mysqli_query($this->dbConnect(), "SELECT * FROM Liquids");

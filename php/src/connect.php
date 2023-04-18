@@ -7,6 +7,7 @@
         private $password;
         private $database ;
 
+        //* The connection to the server and database gets created
         protected function dbConnect() {
 
             $this->servername = 'db';
