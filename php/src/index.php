@@ -36,7 +36,6 @@
         include_once('delete.php');
         include_once('save.php');
 
-        //* main.php muss immer als letztes angegeben werden, damit alle anderen Klassen erkannt werden
         include_once('main.php');
 
     ?>
